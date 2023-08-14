@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/http//oleksandrsokaliuk.github.io/S.Tories/static/css/main.e6c13ad2.css",
+    "main.js": "/http//oleksandrsokaliuk.github.io/S.Tories/static/js/main.b581372b.js",
+    "static/media/background-video.mp4": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/background-video.307737a3da372faa4fdf.mp4",
+    "static/media/background-video.webm": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/background-video.001be2e5949202b3ab95.webm",
+    "static/media/github-icon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/github-icon.f62ad44548bffbc942a12d78bd3fc936.svg",
+    "static/media/behanceIcon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/behanceIcon.205fd68218dbe1c67ee26327b93b4846.svg",
+    "static/media/instaIcon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/instaIcon.f1287d37df1c79fcea330f057d64d944.svg",
+    "static/media/linkedinIcon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/linkedinIcon.7765ca5b468ae69c8b27dfbec82ceee4.svg",
+    "static/media/loginIcon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/loginIcon.259f3cb51bf667763da2b79110f6f10d.svg",
+    "index.html": "/http//oleksandrsokaliuk.github.io/S.Tories/index.html",
+    "static/media/toggleMode.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/toggleMode.0c62f226ffcfc25e71f8b47ec6e9ca69.svg",
+    "static/media/findIcon.svg": "/http//oleksandrsokaliuk.github.io/S.Tories/static/media/findIcon.c4e2c6e32746f02d85000fde9b313d5b.svg",
+    "main.e6c13ad2.css.map": "/http//oleksandrsokaliuk.github.io/S.Tories/static/css/main.e6c13ad2.css.map",
+    "main.b581372b.js.map": "/http//oleksandrsokaliuk.github.io/S.Tories/static/js/main.b581372b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.b581372b.js"
+  ]
+}
