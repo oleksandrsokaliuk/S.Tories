@@ -12,6 +12,10 @@ interface SearchBarProps {
   searchBarInputWide: boolean;
 }
 
+interface ToggleModeProps {
+  whiteTheme: boolean;
+}
+
 export const NavigationContainer = styled.nav`
   display: flex;
   flex-wrap: wrap;
@@ -39,6 +43,7 @@ export const NavigationLinks = styled(Link)`
   line-height: 107px;
   color: #191917;
   transition: all 0.3s linear;
+  position: relative;
   &:hover {
     transform: scale(1.2);
     font-weight: 800;
@@ -88,13 +93,12 @@ export const SearchBarIcon = styled.img<SearchBarProps>`
   transition: right 0.3s ease-in-out;
 `;
 
-export const ToggleModeIcon = styled.img`
+export const ToggleModeIcon = styled.img<ToggleModeProps>`
   height: 140%;
   cursor: pointer;
   transition: all 0.3s linear;
-  &:hover {
-    transform: scale(1.2);
-  }
+  transform: ${({ whiteTheme }) =>
+    whiteTheme ? "rotate(180deg) scale(1.2)" : "scale(1.2) rotate(0)"}; ;
 `;
 
 export const LoginIcon = styled.img`

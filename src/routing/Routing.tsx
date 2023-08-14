@@ -5,12 +5,14 @@ import StoriesPage from "../components/StoriesPage";
 import LoginPage from "../components/LoginPage";
 import CreateStory from "../components/CreateStory";
 import PickedStory from "../components/PickedStory";
+import RegistrationPage from "../components/RegistrationPage";
 
 const locations = {
   homePage: "/",
   readPage: "/read",
   storiesPage: "/stories",
   loginPage: "/login",
+  registrationPage: "/registration",
   createStory: "/addfanfic",
   pickedStory: "/fanfic/:id",
 };
@@ -31,12 +33,18 @@ export const routes = [
   {
     path: locations.storiesPage,
     component: StoriesPage,
-    name: "Fanfic",
+    name: "Stories",
     exact: true,
   },
   {
     path: locations.loginPage,
     component: LoginPage,
+    name: "LoginPage",
+    exact: true,
+  },
+  {
+    path: locations.registrationPage,
+    component: RegistrationPage,
     name: "LoginPage",
     exact: true,
   },

@@ -5,19 +5,19 @@ export const MainContainer = styled.div`
   min-height: 70vh;
   height: 100vh;
   width: 100vw;
-  background-color: #191917;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0);
 `;
 
 export const FlexContainer = styled.div`
   height: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
+  overflow: hidden;
 `;
 
 export const FlexTitle = styled.h1`
@@ -26,6 +26,7 @@ export const FlexTitle = styled.h1`
   font-size: 120px;
   text-transform: capitalize;
   color: #191917;
+  z-index: 2;
 
   @media (max-width: 850px) {
     font-size: 80px;
@@ -38,6 +39,7 @@ export const FlexDescription = styled.p`
   letter-spacing: 15px;
   text-transform: uppercase;
   text-align: center;
+  z-index: 10;
   @media (max-width: 850px) {
     font-size: 25px;
   }
@@ -47,8 +49,8 @@ export const BackgroundVideo = styled.video`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   filter: blur(5px);
   min-width: 100%;

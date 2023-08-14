@@ -24,6 +24,7 @@ const Navigation = () => {
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
   const [searchBarWide, setSearchBarWide] = useState<boolean>(false);
   const [searchBarInputWide, setSearchBarInputWide] = useState<boolean>(false);
+  const [whiteTheme, setWhiteTheme] = useState<boolean>(false);
   const navigation = useNavigate();
 
   // logic
@@ -70,7 +71,13 @@ const Navigation = () => {
         />
       </SearchBar>
 
-      <ToggleModeIcon src={toggleMode} />
+      <ToggleModeIcon
+        src={toggleMode}
+        onClick={() => {
+          setWhiteTheme((state) => !state);
+        }}
+        whiteTheme={whiteTheme}
+      />
       <LoginIcon
         src={loginIcon}
         onClick={() => {

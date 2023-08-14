@@ -1,5 +1,3 @@
-import backgroundVideoMp4 from "../assets/background-video.mp4";
-import backgroundVideoWebm from "../assets/background-video.webm";
 import DevelopersInfo from "./DevelopersInfo";
 import {
   MainContainer,
@@ -17,10 +15,6 @@ const WelcomePage = () => {
     <>
       <MainContainer>
         <FlexContainer>
-          <BackgroundVideo preload="auto" loop autoPlay muted>
-            <source type="video/webm" src={backgroundVideoWebm} />
-            <source type="video/mp4" src={backgroundVideoMp4} />
-          </BackgroundVideo>
           <FlexTitle>S.Tories</FlexTitle>
           <FlexDescription>This is a website about dreams</FlexDescription>
           <DevelopersInfoContainer>
