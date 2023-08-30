@@ -15,10 +15,10 @@ function App() {
       <GlobalStyle />
       <AppMainContainer>
         <Navigation />
-        <BackgroundVideo preload="auto" loop autoPlay muted>
+        {/* <BackgroundVideo preload="auto" loop autoPlay muted>
           <source type="video/webm" src={backgroundVideoWebm} />
           <source type="video/mp4" src={backgroundVideoMp4} />
-        </BackgroundVideo>
+        </BackgroundVideo> */}
         <Routing />
       </AppMainContainer>
     </>

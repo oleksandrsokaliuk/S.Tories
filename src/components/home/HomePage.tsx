@@ -9,6 +9,7 @@ const WelcomePage = () => {
     <HomeContainer>
       <FlexTitle>S.Tories</FlexTitle>
       <FlexDescription>This is a website about dreams</FlexDescription>
+      {/* <CloudImage src={Cloud} alt="cloud" /> */}
     </HomeContainer>
   );
 };

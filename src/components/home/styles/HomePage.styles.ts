@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Cloud from "./../../../assets/cloud.png";
 
 export const HomeContainer = styled.section`
   flex: 6 6 200px;
@@ -6,6 +7,11 @@ export const HomeContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  background: url(${Cloud});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const ContainerTitle = styled.div`
@@ -21,7 +27,7 @@ export const FlexTitle = styled.h1`
   font-weight: 400;
   font-size: 120px;
   text-transform: capitalize;
-  color: #191917;
+  color: #f8faff;
   z-index: 2;
   flex: 0 1 100px;
   text-align: center;
@@ -39,10 +45,21 @@ export const FlexDescription = styled.p`
   text-transform: uppercase;
   text-align: center;
   z-index: 10;
+  color: #f8faff;
   @media (max-width: 850px) {
     font-size: 25px;
   }
 `;
+
+// export const CloudImage = styled.img`
+//   position: absolute;
+//   bottom: 0;
+//   /* width: 100%; */
+//   height: 130%;
+//   opacity: 0.5;
+//   /* object-fit: contain;
+//   object-position: 10% 10%; */
+// `;
 
 export const BackgroundVideo = styled.video`
   width: 100vw;

@@ -58,6 +58,8 @@ const LoginPage = () => {
             id="email"
             name="email"
             placeholder="e-mail"
+            autoComplete="off"
+            autoFocus
           />
           <PasswordContainer>
             <SEOLabel htmlFor="password">password</SEOLabel>
@@ -66,6 +68,7 @@ const LoginPage = () => {
               id="password"
               name="password"
               placeholder="password"
+              autoComplete="off"
             />
             <EyeIcon src={EyeOpened} alt="Show password" />
           </PasswordContainer>

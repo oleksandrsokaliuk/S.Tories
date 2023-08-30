@@ -30,7 +30,7 @@ export const LoginForm = styled(Form)`
 export const AuthForm = styled(LoginForm)``;
 
 export const PasswordContainer = styled.div`
-  background: #d8dad5;
+  background: #f8faff;
   border-radius: 50px;
   position: relative;
   flex: 4 4 50px;
@@ -42,35 +42,32 @@ export const PasswordContainer = styled.div`
 `;
 
 export const LoginInputs = styled(Field)`
-  background: #d8dad5;
+  background: #f8faff;
   border-radius: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #191917;
   border: none;
   flex: 4 4 50px;
-  padding-left: 1em;
+  padding-left: 29px;
   font-family: Josefin Sans;
   display: flex;
   align-items: center;
 
   &::placeholder {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: rgba(25, 25, 23, 0.5);
     text-transform: capitalize;
   }
   &:focus {
     outline: none;
     border: 1px solid rgba(25, 25, 23, 0.5);
+    color: rgba(25, 25, 23, 0.5);
   }
 
-  &[type="password"] {
+  &[name="password"],
+  &[name="confirmPassword"] {
     flex: 1 1 50px;
     &:focus {
-      outline: none;
-      border: none;
-    }
-
-    &:focus PasswordContainer {
       outline: none;
       border: none;
     }
@@ -142,6 +139,7 @@ export const LoginFormLink = styled(Link)`
   font-family: "Gruppo";
   font-weight: 400;
   text-transform: capitalize;
+  padding: 0 29px;
 `;
 
 export const RememberMeContainer = styled.div`

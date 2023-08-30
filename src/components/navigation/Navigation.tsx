@@ -16,6 +16,7 @@ import {
   ToggleModeIcon,
 } from "./styles/Navigation.styled";
 import { NavigationTitle } from "../../types/types";
+import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
@@ -50,6 +51,11 @@ const Navigation = () => {
         }}
         searchBarWide={searchBarWide}
         searchBarInputWide={searchBarInputWide}
+        layout
+        style={{
+          flex: searchBarWide || searchBarInputWide ? "0 1 250px" : "0 1 10px",
+        }}
+        transition={{ duration: 0.5 }}
       >
         <SearchBarInput
           onFocus={() => {

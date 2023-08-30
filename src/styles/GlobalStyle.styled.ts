@@ -27,7 +27,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: gray;
+    background: linear-gradient(
+    180deg,
+    rgba(5, 16, 33, 1) 0%,
+    rgba(14, 34, 67, 1) 30%,
+    rgba(78, 117, 182, 1) 100%
+  ) 
   }
 `;
 

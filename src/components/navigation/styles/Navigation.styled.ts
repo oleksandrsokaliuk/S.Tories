@@ -5,8 +5,11 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { MouseEventHandler } from "react";
 import { SearchBarProps, ToggleModeProps } from "../../../types/types";
+import { motion } from "framer-motion";
 
 export const NavigationContainer = styled.nav`
+  position: sticky;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -28,7 +31,7 @@ export const NavigationLinks = styled(Link)`
   font-weight: 400;
   font-size: 30px;
   line-height: 107px;
-  color: #191917;
+  color: #f8faff;
   transition: all 0.3s linear;
   position: relative;
   flex: 0 1 10px;
@@ -40,36 +43,43 @@ export const NavigationLinks = styled(Link)`
 
 /* Search bar */
 
-export const SearchBar = styled.div<SearchBarProps>`
+export const SearchBar = styled(motion.div)<SearchBarProps>`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) =>
+    props.searchBarWide || props.searchBarInputWide ? "stretch" : "center"};
   align-items: center;
   position: relative;
-  background: #191917;
+  background: #f8faff;
   border-radius: 42px;
   /* width: ${(props) =>
     props.searchBarWide || props.searchBarInputWide ? "13%" : "42px"}; */
   transform: scale(1.2) translate(-20px);
-  height: 60px;
-  width: 60px;
-  flex: ${(props) =>
-    props.searchBarWide || props.searchBarInputWide ? "0 1 15%" : "0 1 3%"};
+  /* height: 60px; */
+  /* width: 60px; */
+  min-width: 60px;
+  min-height: 50%;
+  /* flex: ${(props) =>
+    props.searchBarWide || props.searchBarInputWide
+      ? "0 1 250px"
+      : "0 1 10px"}; */
   overflow: hidden;
-  transition: width 0.3s ease-in-out, filter, -webkit-filter 0.3s linear;
+  /* transition: width 0.3s ease-in-out, filter, -webkit-filter 0.3s linear; */
   color: ${(props) =>
     props.searchBarWide || props.searchBarInputWide ? "#b2b2b2" : "#191917"};
   cursor: pointer;
 `;
 
 export const SearchBarInput = styled.input<SearchBarProps>`
-  /* position: relative; */
-  width: 100%;
-  height: 100%;
+  /* width: 80%;
+  height: 100%; */
+  display: ${(props) =>
+    props.searchBarWide || props.searchBarInputWide ? "block" : "none"};
   flex: ${(props) =>
     props.searchBarWide || props.searchBarInputWide ? "0" : "0 1 90%"};
-  background: rgba(255, 255, 255, 0);
+  background: transparent;
+  height: 100%;
   font-size: 1em;
-  color: inherit;
+  color: #f8faff;
   padding-left: 5%;
   outline: none;
   border: none;
@@ -81,15 +91,12 @@ export const SearchBarInput = styled.input<SearchBarProps>`
 `;
 
 export const SearchBarIcon = styled.img<SearchBarProps>`
-  /* position: absolute; */
-  flex: ${(props) =>
-    props.searchBarWide || props.searchBarInputWide ? "0 1 10%" : "0 1 100%"};
-  /* top: 25%;
-  right: ${(props) =>
-    props.searchBarWide || props.searchBarInputWide ? "10%" : "25%"};
-  height: 20px; */
+  /* flex: ${(props) =>
+    props.searchBarWide || props.searchBarInputWide
+      ? "0 1 10%"
+      : "0 1 100%"}; */
   transition: right 0.3s ease-in-out;
-  padding-right: 10%;
+  /* padding-right: 10%; */
 `;
 
 export const ToggleModeIcon = styled.img<ToggleModeProps>`
@@ -98,7 +105,13 @@ export const ToggleModeIcon = styled.img<ToggleModeProps>`
   transition: all 0.3s linear;
   flex: 0 1 10px;
   transform: ${({ whiteTheme }) =>
-    whiteTheme ? "rotate(180deg) scale(1.2)" : "scale(1.2) rotate(0)"};
+    whiteTheme ? "rotate(180deg)" : "rotate(0)"};
+  color: #f8faff;
+
+  &:hover {
+    transform: ${({ whiteTheme }) =>
+      whiteTheme ? "rotate(180deg) scale(1.2)" : "rotate(0) scale(1.2)"};
+  }
 `;
 
 export const LoginIcon = styled.img`

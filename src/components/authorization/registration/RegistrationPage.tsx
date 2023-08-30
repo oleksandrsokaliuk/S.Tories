@@ -54,19 +54,23 @@ const LoginPage = () => {
     values: FormValues,
     helpers: FormikHelpers<FormValues>
   ) => {
-    // try {
-    //   const response = await axios.post("http://localhost:3005/login", {
-    //     ...values,
-    //   });
-    //   console.log(response);
-    //   response && navigate("/");
-    //   return response.data;
-    // } catch (err) {
-    //   console.log(err);
-    // }
     if (values.password !== values.confirmPassword) {
       console.log("The passwords do not match");
       return new Error("The passwords do not match");
+    }
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/auth/registration",
+        {
+          email: values.email,
+          password: values.password,
+        }
+      );
+      console.log(response);
+      // response && navigate("/");
+      return response.data;
+    } catch (err) {
+      console.log(err);
     }
 
     console.log(values);
@@ -85,6 +89,8 @@ const LoginPage = () => {
             id="email"
             name="email"
             placeholder="e-mail"
+            autoComplete="off"
+            autoFocus
           />
           <PasswordContainer>
             <SEOLabel htmlFor="password">password</SEOLabel>
@@ -93,6 +99,7 @@ const LoginPage = () => {
               id="password"
               name="password"
               placeholder="password"
+              autoComplete="off"
             />
             <EyeIcon
               onClick={() => {
@@ -109,6 +116,7 @@ const LoginPage = () => {
               id="confirmPassword"
               name="confirmPassword"
               placeholder="confirm password"
+              autoComplete="off"
             />
             <EyeIcon
               onClick={() => {
