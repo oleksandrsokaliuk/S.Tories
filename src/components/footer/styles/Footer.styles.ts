@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const DevelopersInfoContainer = styled.div`
+  display: flex;
+  flex: 1 0 50px;
+  align-items: flex-end;
+  justify-content: space-around;
+`;
+
+export const DevInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
 export const DevInfoName = styled.h2`
   font-family: "Gruppo", cursive;
   font-size: 2rem;

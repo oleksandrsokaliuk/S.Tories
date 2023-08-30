@@ -3,12 +3,11 @@ import instaIcon from "../assets/instaIcon.svg";
 import githubIcon from "../assets/github-icon.svg";
 import behanceIcon from "../assets/behanceIcon.svg";
 import {
-  DevInfoContainer,
   DevInfoName,
   DevInfoRole,
   DevContainerLinks,
   SocialNetworkImage,
-} from "../styles/DevelopersInfo.styled";
+} from "../../../styles/DevelopersInfo.styled";
 
 interface DevelopersInfoProps {
   name: string;
@@ -29,29 +28,27 @@ const DevelopersInfo: React.FC<DevelopersInfoProps> = ({
 }) => {
   return (
     <div>
-      <DevInfoContainer>
-        <DevInfoName>{name}</DevInfoName>
-        <DevInfoRole>{proffession}</DevInfoRole>
-      </DevInfoContainer>
+      <DevInfoName>{name}</DevInfoName>
+      <DevInfoRole>{proffession}</DevInfoRole>
       <DevContainerLinks
         style={
           name !== "Viktoriia Sokaliuk" ? { width: "40%" } : { width: "70%" }
         }
       >
-        <a href={linkedin} target="_blank">
+        <a href={linkedin} target="_blank" rel="noreferrer">
           <SocialNetworkImage src={linkedidinIcon} />
         </a>
         {name === "Viktoriia Sokaliuk" ? (
-          <a href={instagram} target="_blank">
+          <a href={instagram} target="_blank" rel="noreferrer">
             <SocialNetworkImage src={instaIcon} />
           </a>
         ) : (
-          <a href={github} target="_blank">
+          <a href={github} target="_blank" rel="noreferrer">
             <SocialNetworkImage src={githubIcon} />
           </a>
         )}
         {name === "Viktoriia Sokaliuk" && (
-          <a href={behance} target="_blank">
+          <a href={behance} target="_blank" rel="noreferrer">
             <SocialNetworkImage src={behanceIcon} />
           </a>
         )}

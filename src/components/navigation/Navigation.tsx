@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import burgerMenuIcon from "../assets/menuicon.png";
 import { useState } from "react";
-import findIcon from "../assets/findIcon.svg";
-import toggleMode from "../assets/toggleMode.svg";
-import loginIcon from "../assets/loginIcon.svg";
+import findIcon from "../../assets/findIcon.svg";
+import soundIcon from "../../assets/sound.svg";
+import toggleMode from "../../assets/toggleMode.svg";
+import loginIcon from "../../assets/loginIcon.svg";
 import {
   LoginIcon,
   NavigationContainer,
@@ -11,16 +12,12 @@ import {
   SearchBar,
   SearchBarIcon,
   SearchBarInput,
+  SoundIcon,
   ToggleModeIcon,
-} from "../styles/Navigation.styled";
-
-interface NavigationTitle {
-  name: string;
-  path: string;
-}
+} from "./styles/Navigation.styled";
+import { NavigationTitle } from "../../types/types";
 
 const Navigation = () => {
-  // hooks
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
   const [searchBarWide, setSearchBarWide] = useState<boolean>(false);
   const [searchBarInputWide, setSearchBarInputWide] = useState<boolean>(false);
@@ -78,6 +75,7 @@ const Navigation = () => {
         }}
         whiteTheme={whiteTheme}
       />
+      <SoundIcon src={soundIcon} />
       <LoginIcon
         src={loginIcon}
         onClick={() => {

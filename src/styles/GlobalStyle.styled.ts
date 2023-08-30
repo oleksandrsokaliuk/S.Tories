@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: inherit;
     margin: 0;
   }
+
+  body {
+    background-color: gray;
+  }
 `;
 
 export default GlobalStyle;

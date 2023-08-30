@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../components/HomePage";
-import ReadPage from "../components/ReadPage";
+import HomePage from "../components/home/HomePage";
+import ReadPage from "../components/read/ReadPage";
 import StoriesPage from "../components/StoriesPage";
-import LoginPage from "../components/LoginPage";
+import LoginPage from "../components/authorization/login/LoginPage";
 import CreateStory from "../components/CreateStory";
 import PickedStory from "../components/PickedStory";
-import RegistrationPage from "../components/RegistrationPage";
+import RegistrationPage from "../components/authorization/registration/RegistrationPage";
 
-const locations = {
+export const locations = {
   homePage: "/",
   readPage: "/read",
   storiesPage: "/stories",
