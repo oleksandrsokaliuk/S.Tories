@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import { SEOLabel } from "../../../styles/seo.styles";
 import EyeOpened from "./../../../assets/eye-opend.svg";
 import { locations } from "../../../routing/Routing";
+import { server } from "../../../api/api";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -30,19 +31,32 @@ const LoginPage = () => {
   };
   const submissionHandler = async (
     values: FormValues,
-    helpers: FormikHelpers<FormValues>
+    { setSubmitting }: FormikHelpers<FormValues>
   ) => {
-    // try {
-    //   const response = await axios.post("http://localhost:3005/login", {
-    //     ...values,
-    //   });
-    //   console.log(response);
-    //   response && navigate("/");
-    //   return response.data;
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    console.log(values);
+    try {
+      // try {
+      //   const response = await axios.post("http://localhost:3005/login", {
+      //     ...values,
+      //   });
+      //   console.log(response);
+      //   response && navigate("/");
+      //   return response.data;
+      // } catch (err) {
+      //   console.log(err);
+      // }
+    } catch (err) {
+      console.error(err);
+      setSubmitting(false); // Сброс флага отправки при ошибке
+    }
+  };
+
+  const googleLoginHandler = async () => {
+    try {
+      const accountData = await server.get("/auth/google");
+      console.log(accountData);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <LoginMainContainer
@@ -82,6 +96,9 @@ const LoginPage = () => {
               create account
             </LoginFormLink>
           </LoginFormLinksContainer>
+          <div>
+            <a href="http://localhost:3001/auth/google">Google</a>
+          </div>
         </LoginForm>
       </LoginFormik>
     </LoginMainContainer>

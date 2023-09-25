@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Routing from "./routing/Routing";
 import Navigation from "./components/navigation/Navigation";
 import GlobalStyle from "./styles/GlobalStyle.styled";
@@ -8,6 +8,7 @@ import {
   AppMainContainer,
   BackgroundVideo,
 } from "./components/home/styles/HomePage.styles";
+import { useCookies } from "react-cookie";
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
       <GlobalStyle />
       <AppMainContainer>
         <Navigation />
-        <BackgroundVideo preload="auto" loop autoPlay muted>
+        {/* <BackgroundVideo preload="auto" loop autoPlay muted>
           <source type="video/webm" src={backgroundVideoWebm} />
           <source type="video/mp4" src={backgroundVideoMp4} />
-        </BackgroundVideo>
+        </BackgroundVideo> */}
         <Routing />
       </AppMainContainer>
     </>

@@ -6,6 +6,8 @@ import LoginPage from "../components/authorization/login/LoginPage";
 import CreateStory from "../components/CreateStory";
 import PickedStory from "../components/PickedStory";
 import RegistrationPage from "../components/authorization/registration/RegistrationPage";
+import TokenAcceptor from "../components/authorization/login/TokenAcceptor";
+import UserConfig from "../components/authorization/configuration/UserConfig";
 
 export const locations = {
   homePage: "/",
@@ -15,6 +17,8 @@ export const locations = {
   registrationPage: "/registration",
   createStory: "/addfanfic",
   pickedStory: "/fanfic/:id",
+  loginToken: "/auth/:token/:email/:firstName/:lastName/:picture",
+  userConfig: "/user",
 };
 
 export const routes = [
@@ -49,6 +53,12 @@ export const routes = [
     exact: true,
   },
   {
+    path: locations.loginToken,
+    component: TokenAcceptor,
+    name: "TokenRedirect",
+    exact: true,
+  },
+  {
     path: locations.createStory,
     component: CreateStory,
     name: "addFanfic",
@@ -58,6 +68,12 @@ export const routes = [
     path: locations.pickedStory,
     component: PickedStory,
     name: "pickedFanfic",
+    exact: true,
+  },
+  {
+    path: locations.userConfig,
+    component: UserConfig,
+    name: "userConfig",
     exact: true,
   },
 ];

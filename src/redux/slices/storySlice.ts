@@ -28,7 +28,6 @@ export const getStoryById = createAsyncThunk(
   async (id: string | undefined) => {
     try {
       const response = await api.getStoryById(id);
-      console.log(response);
       return response;
     } catch (error) {
       console.log(error);

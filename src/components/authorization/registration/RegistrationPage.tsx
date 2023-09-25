@@ -26,7 +26,7 @@ enum PasswordType {
   CONFIRMPASSWORD = "confirmPassword",
 }
 
-const LoginPage = () => {
+const RegistrationPage = () => {
   const [passwordChecked, setPasswordChecked] = useState<{
     password: boolean;
     confirmPassword: boolean;
@@ -65,11 +65,8 @@ const LoginPage = () => {
     //   console.log(err);
     // }
     if (values.password !== values.confirmPassword) {
-      console.log("The passwords do not match");
       return new Error("The passwords do not match");
     }
-
-    console.log(values);
   };
   return (
     <LoginMainContainer
@@ -77,7 +74,16 @@ const LoginPage = () => {
       animate={{ scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <LoginFormik initialValues={initialValues} onSubmit={submissionHandler}>
+      <LoginFormik
+        initialValues={initialValues}
+        onSubmit={(
+          values: FormValues,
+          { setSubmitting }: FormikHelpers<FormValues>
+        ) => {
+          console.log(values);
+          setSubmitting(false);
+        }}
+      >
         <LoginForm>
           <SEOLabel htmlFor="email">email</SEOLabel>
           <LoginInputs
@@ -131,4 +137,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegistrationPage;

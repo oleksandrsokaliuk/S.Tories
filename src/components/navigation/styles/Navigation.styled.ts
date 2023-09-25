@@ -111,6 +111,17 @@ export const LoginIcon = styled.img`
   }
 `;
 
+export const ProfileIcon = styled.img`
+  height: 65%;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  flex: 0 1 10px;
+  border-radius: 50%;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 export const SoundIcon = styled.img`
   cursor: pointer;
   transition: all 0.3s linear;
