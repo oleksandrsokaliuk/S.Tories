@@ -9,6 +9,8 @@ import {
   SamplesWideContainer,
   CloudImageLeft,
   CloudImageRight,
+  CloudsContainer,
+  MainHeader,
 } from "./styles/HomePage.styles";
 import Cloud from "./../../assets/cloud.png";
 import { useCookies } from "react-cookie";
@@ -17,6 +19,7 @@ import { RootState } from "../../redux/store";
 import { IUser } from "../../redux/slices/userSlice";
 import LeftCloud from "../icons/LeftCloud";
 import RightCloud from "../icons/RightCloud";
+import Skyline from "../icons/Skyline";
 
 interface StoryI {
   id?: string;
@@ -255,8 +258,12 @@ const WelcomePage = () => {
         {/* <FlexTitle>S.Tories</FlexTitle>
         {user && <h2 style={{ zIndex: 1000 }}>Welcome {user.firstName}</h2>}
         <FlexDescription>This is a website about dreams</FlexDescription> */}
-        <LeftCloud />
-        <RightCloud />
+        <CloudsContainer>
+          <LeftCloud />
+          <MainHeader>S.Tories</MainHeader>
+          <RightCloud />
+        </CloudsContainer>
+        <Skyline />
       </HomeContainer>
       <SamplesMainContainer>
         <SamplesWideContainer>

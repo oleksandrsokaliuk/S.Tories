@@ -10,20 +10,29 @@ import {
 } from "./components/home/styles/HomePage.styles";
 import { useCookies } from "react-cookie";
 import NavigationTest from "./components/navigation/NavigationTest";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 function App() {
+  const currentTheme = useSelector(
+    (state: RootState) => state.themeSlice.currentTheme
+  );
   return (
     <>
-      <GlobalStyle />
-      <AppMainContainer>
-        {/* <Navigation /> */}
-        <NavigationTest />
-        {/* <BackgroundVideo preload="auto" loop autoPlay muted>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <AppMainContainer>
+          {/* <Navigation /> */}
+          <NavigationTest />
+          {/* <BackgroundVideo preload="auto" loop autoPlay muted>
           <source type="video/webm" src={backgroundVideoWebm} />
           <source type="video/mp4" src={backgroundVideoMp4} />
         </BackgroundVideo> */}
-        <Routing />
-      </AppMainContainer>
+          <Routing />
+        </AppMainContainer>
+      </ThemeProvider>
     </>
   );
 }

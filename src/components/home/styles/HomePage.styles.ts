@@ -6,11 +6,27 @@ interface SampleParagraphI {
 }
 
 export const HomeContainer = styled.section`
-  flex: 6 6 90vh;
+  flex: 6 6 100vh;
   /* background-color: rgba(0, 0, 0, 0); */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+`;
+
+export const MainHeader = styled.h1`
+  font-family: "Rock Salt";
+  font-weight: 400;
+  font-size: 2em;
+  text-transform: capitalize;
+  transform: scale(4);
+  padding-top: 2%;
+  color: #f8faff;
+  z-index: -2;
+  flex: 0 1 100px;
+  text-align: center;
+  align-self: flex-start;
 `;
 
 export const ContainerTitle = styled.div`
@@ -39,6 +55,7 @@ export const FlexTitle = styled.h1`
 export const SunContainer = styled.div`
   cursor: pointer;
   transition: all 0.3s linear;
+  /* transform: scale(2); */
   /* flex: 0 1 200px; */
 `;
 
@@ -127,6 +144,13 @@ export const RightCloudContainer = styled.div`
     display: block;
     opacity: 1;
   }
+`;
+
+export const CloudsContainer = styled.div`
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 const imageLeft = keyframes`

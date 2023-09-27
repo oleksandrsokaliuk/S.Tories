@@ -11,8 +11,8 @@ import UserConfig from "../components/authorization/configuration/UserConfig";
 
 export const locations = {
   homePage: "/",
-  readPage: "/read",
-  storiesPage: "/stories",
+  shareStory: "/share",
+  voyage: "/voyages",
   loginPage: "/login",
   registrationPage: "/registration",
   createStory: "/addfanfic",
@@ -29,13 +29,13 @@ export const routes = [
     exact: true,
   },
   {
-    path: locations.readPage,
+    path: locations.voyage,
     component: ReadPage,
     name: "ReadPage",
     exact: true,
   },
   {
-    path: locations.storiesPage,
+    path: locations.shareStory,
     component: StoriesPage,
     name: "Stories",
     exact: true,

@@ -4,10 +4,13 @@ import {
   RightCloudHeader,
   RightCloudSVG,
 } from "../home/styles/HomePage.styles";
+import { useNavigate } from "react-router-dom";
+import { locations } from "../../routing/Routing";
 
 const RightCloud: FC = () => {
+  const navigate = useNavigate();
   return (
-    <RightCloudContainer>
+    <RightCloudContainer onClick={() => navigate(locations.voyage)}>
       <RightCloudHeader>Dream Voyages</RightCloudHeader>
       <RightCloudSVG
         stroke-miterlimit="10"

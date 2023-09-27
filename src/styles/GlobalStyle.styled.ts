@@ -1,4 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+import { store } from "../redux/store"; // Импортируйте свой Redux Store
+
+// let currentTheme = "";
+
+const subscribe = store.subscribe(() => {
+  const currentState = store.getState(); // Получаете текущее состояние
+  console.log("Состояние изменилось и равно:", currentState);
+});
+// subscribe();
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -27,8 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: rgb(12,140,166);
-background: radial-gradient(circle, rgba(12,140,166,1) 0%, rgba(15,183,217,1) 51%, rgba(33,80,89,1) 100%);
+    background: rgb(173,216,230);
+background: linear-gradient(180deg, rgba(173,216,230,0.6) 0%, rgba(0,191,255,1) 51%, rgba(173,216,230,1) 100%);
   }
 `;
 

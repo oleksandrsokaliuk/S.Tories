@@ -4,10 +4,13 @@ import {
   LeftCloudHeader,
   LeftCloudSVG,
 } from "../home/styles/HomePage.styles";
+import { useNavigate } from "react-router-dom";
+import { locations } from "../../routing/Routing";
 
 const LeftCloud: FC = () => {
+  const navigate = useNavigate();
   return (
-    <LeftCloudContainer>
+    <LeftCloudContainer onClick={() => navigate(locations.shareStory)}>
       <LeftCloudHeader>Dream Share</LeftCloudHeader>
       <LeftCloudSVG
         stroke-miterlimit="10"

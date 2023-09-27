@@ -26,6 +26,7 @@ import { useCookies } from "react-cookie";
 import api from "../../api/api";
 import { useDispatch } from "react-redux";
 import Sun from "../icons/Sun";
+import { ThemeType, changeTheme } from "../../redux/slices/themeSlice";
 
 const NavigationTest = () => {
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
@@ -66,11 +67,21 @@ const NavigationTest = () => {
       }
     }
   }, []);
-
   return (
     <nav>
       <NavigationList>
-        <li style={{ flex: "0 1 150px" }} onClick={() => navigation("/")}>
+        <li
+          style={{ flex: "0 1 150px", zIndex: "1000" }}
+          onClick={() =>
+            dispatch(
+              changeTheme((state: RootState) =>
+                state.themeSlice.currentTheme === ThemeType.LIGHT
+                  ? ThemeType.DARK
+                  : ThemeType.LIGHT
+              )
+            )
+          }
+        >
           {/* <ToggleModeIcon
             src={toggleMode}
             onClick={() => {
@@ -80,10 +91,10 @@ const NavigationTest = () => {
           /> */}
           <Sun />
         </li>
-        <li style={{ flex: "0 1 10px" }}>
+        {/* <li style={{ flex: "0 1 10px" }}>
           <NavigationHeader>S.Tories</NavigationHeader>
-        </li>
-        <li style={{ flex: "0 1 10px" }}>
+        </li> */}
+        <li style={{ flex: "0 1 10px", margin: "1% 1%" }}>
           {user?.picture ? (
             <ProfileIcon
               src={

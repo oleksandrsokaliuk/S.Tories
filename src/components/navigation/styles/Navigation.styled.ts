@@ -8,16 +8,10 @@ import { SearchBarProps, ToggleModeProps } from "../../../types/types";
 
 export const NavigationList = styled.ul`
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 0 5%;
-  align-items: center;
+  /* padding: 0 5%; */
   flex: 1 1 10px;
   z-index: 50;
-  &:hover > *:not(:hover) {
-    filter: blur(4px);
-  }
 `;
 
 export const NavigationHeader = styled.h1`
@@ -127,10 +121,10 @@ export const LoginIcon = styled.img`
 `;
 
 export const ProfileIcon = styled.img`
-  height: 65%;
+  /* height: 65%; */
   cursor: pointer;
   transition: all 0.3s linear;
-  flex: 0 1 10px;
+  /* flex: 0 1 10px; */
   border-radius: 50%;
   &:hover {
     transform: scale(1.2);
