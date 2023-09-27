@@ -6,16 +6,31 @@ import { Link } from "react-router-dom";
 import { MouseEventHandler } from "react";
 import { SearchBarProps, ToggleModeProps } from "../../../types/types";
 
-export const NavigationContainer = styled.nav`
+export const NavigationList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 5%;
   align-items: center;
   flex: 1 1 10px;
   z-index: 50;
   &:hover > *:not(:hover) {
     filter: blur(4px);
+  }
+`;
+
+export const NavigationHeader = styled.h1`
+  font-family: "Rock Salt";
+  font-weight: 400;
+  font-size: 2em;
+  text-transform: capitalize;
+  color: #f8faff;
+  z-index: 2;
+  flex: 0 1 100px;
+  text-align: center;
+
+  @media (max-width: 850px) {
   }
 `;
 

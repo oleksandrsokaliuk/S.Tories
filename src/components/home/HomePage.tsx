@@ -15,6 +15,8 @@ import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IUser } from "../../redux/slices/userSlice";
+import LeftCloud from "../icons/LeftCloud";
+import RightCloud from "../icons/RightCloud";
 
 interface StoryI {
   id?: string;
@@ -245,19 +247,16 @@ const WelcomePage = () => {
   }, []);
   useEffect(() => {
     setUser(userData);
-    console.log(user);
-    console.log(userData);
-    console.log({ cookies });
   }, [userData]);
 
   return (
     <>
       <HomeContainer>
-        <FlexTitle>S.Tories</FlexTitle>
+        {/* <FlexTitle>S.Tories</FlexTitle>
         {user && <h2 style={{ zIndex: 1000 }}>Welcome {user.firstName}</h2>}
-        <FlexDescription>This is a website about dreams</FlexDescription>
-        <CloudImageLeft src={Cloud} alt="cloud" />
-        <CloudImageRight src={Cloud} alt="cloud" />
+        <FlexDescription>This is a website about dreams</FlexDescription> */}
+        <LeftCloud />
+        <RightCloud />
       </HomeContainer>
       <SamplesMainContainer>
         <SamplesWideContainer>

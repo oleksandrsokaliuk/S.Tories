@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: gray;
+    background: rgb(12,140,166);
+background: radial-gradient(circle, rgba(12,140,166,1) 0%, rgba(15,183,217,1) 51%, rgba(33,80,89,1) 100%);
   }
 `;
 

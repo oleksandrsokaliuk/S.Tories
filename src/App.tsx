@@ -9,13 +9,15 @@ import {
   BackgroundVideo,
 } from "./components/home/styles/HomePage.styles";
 import { useCookies } from "react-cookie";
+import NavigationTest from "./components/navigation/NavigationTest";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <AppMainContainer>
-        <Navigation />
+        {/* <Navigation /> */}
+        <NavigationTest />
         {/* <BackgroundVideo preload="auto" loop autoPlay muted>
           <source type="video/webm" src={backgroundVideoWebm} />
           <source type="video/mp4" src={backgroundVideoMp4} />

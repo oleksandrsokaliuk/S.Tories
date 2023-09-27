@@ -7,16 +7,10 @@ interface SampleParagraphI {
 
 export const HomeContainer = styled.section`
   flex: 6 6 90vh;
-  background-color: rgba(0, 0, 0, 0);
+  /* background-color: rgba(0, 0, 0, 0); */
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  overflow: hidden;
-  background: url(${Cloud});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  align-items: center;
 `;
 
 export const ContainerTitle = styled.div`
@@ -42,6 +36,29 @@ export const FlexTitle = styled.h1`
   }
 `;
 
+export const SunContainer = styled.div`
+  cursor: pointer;
+  transition: all 0.3s linear;
+  /* flex: 0 1 200px; */
+`;
+
+const rotatingSun = keyframes`
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+`;
+
+export const SunSVG = styled.svg`
+  width: 100%;
+  height: 100%;
+  &:hover {
+    animation: ${rotatingSun} 5s infinite linear;
+  }
+`;
+
 export const FlexDescription = styled.p`
   font-family: "Reenie Beanie", cursive;
   font-size: 40px;
@@ -53,6 +70,62 @@ export const FlexDescription = styled.p`
   color: #f8faff;
   @media (max-width: 850px) {
     font-size: 25px;
+  }
+`;
+
+export const LeftCloudHeader = styled.h2`
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  z-index: 1000;
+  font-family: "Rock Salt", sans-serif;
+  color: white;
+  display: none;
+  opacity: 0;
+`;
+
+export const LeftCloudContainer = styled.div`
+  flex: 0 0 40vw;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:hover ${LeftCloudHeader} {
+    display: block;
+    opacity: 1;
+  }
+`;
+
+export const LeftCloudSVG = styled.svg``;
+
+export const RightCloudSVG = styled.svg``;
+
+export const RightCloudHeader = styled.h2`
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  z-index: 1000;
+  font-family: "Rock Salt", sans-serif;
+  color: white;
+  display: none;
+  opacity: 0;
+`;
+
+export const RightCloudContainer = styled.div`
+  flex: 0 0 40vw;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:hover ${RightCloudHeader} {
+    display: block;
+    opacity: 1;
   }
 `;
 

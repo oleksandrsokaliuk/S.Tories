@@ -8,8 +8,9 @@ import loginIcon from "../../assets/loginIcon.svg";
 
 import {
   LoginIcon,
-  // NavigationContainer,
+  NavigationHeader,
   NavigationLinks,
+  NavigationList,
   ProfileIcon,
   SearchBar,
   SearchBarIcon,
@@ -24,8 +25,9 @@ import { IUser, addUser } from "../../redux/slices/userSlice";
 import { useCookies } from "react-cookie";
 import api from "../../api/api";
 import { useDispatch } from "react-redux";
+import Sun from "../icons/Sun";
 
-const Navigation = () => {
+const NavigationTest = () => {
   const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
   const [searchBarWide, setSearchBarWide] = useState<boolean>(false);
   const [searchBarInputWide, setSearchBarInputWide] = useState<boolean>(false);
@@ -67,75 +69,45 @@ const Navigation = () => {
 
   return (
     <nav>
-      {navigationTitles.map((title, index) => (
-        <NavigationLinks key={index} to={title.path}>
-          {title.name}
-        </NavigationLinks>
-      ))}
-      {/* <SearchBar
-        onMouseOver={() => {
-          setSearchBarWide(true);
-        }}
-        onMouseLeave={() => {
-          setSearchBarWide(false);
-        }}
-        searchBarWide={searchBarWide}
-        searchBarInputWide={searchBarInputWide}
-      >
-        <SearchBarInput
-          onFocus={() => {
-            setSearchBarInputWide(true);
-          }}
-          onBlur={() => {
-            setSearchBarInputWide(false);
-          }}
-          searchBarWide={searchBarWide}
-          searchBarInputWide={searchBarInputWide}
-        />
-        <SearchBarIcon
-          src={findIcon}
-          searchBarWide={searchBarWide}
-          searchBarInputWide={searchBarInputWide}
-        />
-      </SearchBar> */}
-
-      <ToggleModeIcon
-        src={toggleMode}
-        onClick={() => {
-          setWhiteTheme((state) => !state);
-        }}
-        whiteTheme={whiteTheme}
-      />
-      <SoundIcon src={soundIcon} />
-      {user?.picture ? (
-        <ProfileIcon
-          src={
-            user.picture
-              ? user.picture
-              : "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg"
-          }
-          alt="profile"
-          onClick={() => {
-            navigation("/user");
-          }}
-        />
-      ) : (
-        <LoginIcon
-          src={loginIcon}
-          onClick={() => {
-            navigation("/login");
-          }}
-        />
-      )}
-      {/* <img
-        src={burgerMenuIcon}
-        className="burger-menu-icon"
-        onClick={() => {
-          setBurgerMenu(!burgerMenu);
-        }}
-      /> */}
+      <NavigationList>
+        <li style={{ flex: "0 1 150px" }} onClick={() => navigation("/")}>
+          {/* <ToggleModeIcon
+            src={toggleMode}
+            onClick={() => {
+              setWhiteTheme((state) => !state);
+            }}
+            whiteTheme={whiteTheme}
+          /> */}
+          <Sun />
+        </li>
+        <li style={{ flex: "0 1 10px" }}>
+          <NavigationHeader>S.Tories</NavigationHeader>
+        </li>
+        <li style={{ flex: "0 1 10px" }}>
+          {user?.picture ? (
+            <ProfileIcon
+              src={
+                user.picture
+                  ? user.picture
+                  : "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg"
+              }
+              alt="profile"
+              onClick={() => {
+                navigation("/user");
+              }}
+            />
+          ) : (
+            <LoginIcon
+              src={loginIcon}
+              onClick={() => {
+                navigation("/login");
+              }}
+            />
+          )}
+        </li>
+      </NavigationList>
     </nav>
   );
 };
 
-export default Navigation;
+export default NavigationTest;
