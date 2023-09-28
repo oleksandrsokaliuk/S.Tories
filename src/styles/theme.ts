@@ -41,7 +41,7 @@ const theme: ThemeI = {
       buildings: {
         lightBlue: {
           building: "#1b598f",
-          light: "#ffd335",
+          light: "#776732",
           dark: "#635216",
         },
         darkBlue: {
@@ -75,17 +75,17 @@ const theme: ThemeI = {
         lightBlue: {
           building: "#000002",
           light: "#000002",
-          dark: "#000002",
+          dark: "#ffd335",
         },
         darkBlue: {
           building: "#000002",
           light: "#000002",
-          dark: "#000002",
+          dark: "#c69b23",
         },
         brown: {
           building: "#000002",
           light: "#000002",
-          dark: "#000002",
+          dark: "#ffba89",
         },
       },
       trees: "#000002",
@@ -96,9 +96,9 @@ const theme: ThemeI = {
         tires: "#000002",
       },
       sky: {
-        top: "rgba(0, 0, 51, 1)",
+        top: "rgba(255, 51, 51, 1)",
         middle: "rgba(0, 0, 102, 1)",
-        bottom: "rgba(255, 51, 51, 1)",
+        bottom: "rgba(0, 0, 51, 1)",
       },
     },
   },

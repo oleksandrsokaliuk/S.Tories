@@ -5,7 +5,7 @@ export const SkylineContainer = styled.div`
   bottom: -5%;
   width: 100%;
   height: auto;
-  z-index: -1;
+  z-index: 1;
 `;
 
 export const SkylineSVG = styled.svg`

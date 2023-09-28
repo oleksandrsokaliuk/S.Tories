@@ -1,13 +1,12 @@
 import styled, { keyframes } from "styled-components";
-import Cloud from "./../../../assets/cloud.png";
+import { ThemeType } from "../../../redux/slices/themeSlice";
 
 interface SampleParagraphI {
   trnslt: number;
 }
 
 export const HomeContainer = styled.section`
-  flex: 6 6 100vh;
-  /* background-color: rgba(0, 0, 0, 0); */
+  flex: 1 1 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,18 +14,39 @@ export const HomeContainer = styled.section`
   position: relative;
 `;
 
-export const MainHeader = styled.h1`
+interface Mainheader {
+  currentTheme: ThemeType;
+}
+
+export const MainHeader = styled.h1<Mainheader>`
   font-family: "Rock Salt";
   font-weight: 400;
   font-size: 2em;
   text-transform: capitalize;
   transform: scale(4);
   padding-top: 2%;
-  color: #f8faff;
-  z-index: -2;
+  z-index: 2;
   flex: 0 1 100px;
   text-align: center;
   align-self: flex-start;
+  background: ${(props) =>
+    props.currentTheme === ThemeType.LIGHT
+      ? `linear-gradient(
+      180deg,
+      ${props.theme.light.mainPage.sky.bottom} 0%,
+      ${props.theme.light.mainPage.sky.middle} 51%,
+      ${props.theme.light.mainPage.sky.top} 100%
+    )`
+      : `linear-gradient(
+        180deg,
+        ${props.theme.dark.mainPage.sky.bottom} 0%,
+        ${props.theme.dark.mainPage.sky.middle} 51%,
+        ${props.theme.dark.mainPage.sky.top} 100%
+      )`};
+  -webkit-text-stroke: 1px black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 `;
 
 export const ContainerTitle = styled.div`
@@ -55,8 +75,6 @@ export const FlexTitle = styled.h1`
 export const SunContainer = styled.div`
   cursor: pointer;
   transition: all 0.3s linear;
-  /* transform: scale(2); */
-  /* flex: 0 1 200px; */
 `;
 
 const rotatingSun = keyframes`
@@ -105,6 +123,7 @@ export const LeftCloudContainer = styled.div`
   flex: 0 0 40vw;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  z-index: 3;
   &:hover {
     transform: scale(1.2);
   }
@@ -137,6 +156,7 @@ export const RightCloudContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 2;
   &:hover {
     transform: scale(1.2);
   }
@@ -186,9 +206,6 @@ export const CloudImageLeft = styled.img`
   object-position: 10% 10%;
   animation: ${imageLeft} 40s infinite;
   transform: scale(2);
-  /* &:hover {
-    transform: translateX(-1000px);
-  } */
 `;
 
 export const CloudImageRight = styled.img`
@@ -200,9 +217,6 @@ export const CloudImageRight = styled.img`
   object-position: 10% 10%;
   animation: ${imageRight} 40s infinite;
   transform: scale(2);
-  /* &:hover {
-    transform: translateX(-1000px);
-  } */
 `;
 
 export const BackgroundVideo = styled.video`
@@ -217,10 +231,33 @@ export const BackgroundVideo = styled.video`
   z-index: -1;
 `;
 
-export const AppMainContainer = styled.div`
+interface AppContainerI {
+  currentTheme: ThemeType;
+}
+
+export const AppMainContainer = styled.div<AppContainerI>`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: hidden;
+  background: ${(props) =>
+    props.currentTheme === ThemeType.LIGHT
+      ? props.theme.light.mainPage.sky.top
+      : props.theme.dark.mainPage.sky.top};
+  background: ${(props) =>
+    props.currentTheme === ThemeType.LIGHT
+      ? `linear-gradient(
+      180deg,
+      ${props.theme.light.mainPage.sky.bottom} 0%,
+      ${props.theme.light.mainPage.sky.middle} 51%,
+      ${props.theme.light.mainPage.sky.top} 100%
+    )`
+      : `linear-gradient(
+        180deg,
+        ${props.theme.dark.mainPage.sky.bottom} 0%,
+        ${props.theme.dark.mainPage.sky.middle} 51%,
+        ${props.theme.dark.mainPage.sky.top} 100%
+      )`};
 `;
 
 export const ContentContainer = styled.div`

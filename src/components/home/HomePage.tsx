@@ -238,6 +238,7 @@ const WelcomePage = () => {
 
   const [stories, setStories] = useState<StoryI[][]>([]);
   const userData = useSelector((state: RootState) => state.userSlice.user);
+  const { currentTheme } = useSelector((state: RootState) => state.themeSlice);
   const [user, setUser] = useState<IUser>();
   useEffect(() => {
     const storiesArray: StoryI[][] = [];
@@ -260,12 +261,12 @@ const WelcomePage = () => {
         <FlexDescription>This is a website about dreams</FlexDescription> */}
         <CloudsContainer>
           <LeftCloud />
-          <MainHeader>S.Tories</MainHeader>
+          <MainHeader currentTheme={currentTheme}>S.Tories</MainHeader>
           <RightCloud />
         </CloudsContainer>
         <Skyline />
       </HomeContainer>
-      <SamplesMainContainer>
+      {/* <SamplesMainContainer>
         <SamplesWideContainer>
           <SampleContainer>
             {stories[0] &&
@@ -310,7 +311,7 @@ const WelcomePage = () => {
               })}
           </SampleContainer>
         </SamplesWideContainer>
-      </SamplesMainContainer>
+      </SamplesMainContainer> */}
     </>
   );
 };

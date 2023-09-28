@@ -23,7 +23,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <AppMainContainer>
+        <AppMainContainer currentTheme={currentTheme}>
           {/* <Navigation /> */}
           <NavigationTest />
           {/* <BackgroundVideo preload="auto" loop autoPlay muted>
