@@ -59,7 +59,7 @@ const NavigationTest = () => {
       try {
         const userData = async () => {
           const response = await api.getMe(cookies.token);
-          dispatch(addUser(response.data));
+          dispatch(addUser(response));
         };
         userData();
       } catch (error) {
@@ -94,7 +94,7 @@ const NavigationTest = () => {
         {/* <li style={{ flex: "0 1 10px" }}>
           <NavigationHeader>S.Tories</NavigationHeader>
         </li> */}
-        <li style={{ flex: "0 1 10px", margin: "1% 1%" }}>
+        <li style={{ flex: "0 1 10px", margin: "1% 1%", zIndex: 5 }}>
           {user?.picture ? (
             <ProfileIcon
               src={

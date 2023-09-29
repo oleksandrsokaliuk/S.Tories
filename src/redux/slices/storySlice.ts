@@ -1,33 +1,32 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../../api/api";
+import api, { StoryI } from "../../api/api";
 import { Story } from "../../types/Story";
 
 export const postStory = createAsyncThunk(
-  "story/addStory",
-  async (newStory: Story) => {
-    try {
-      const response = await api.postStory(newStory);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
+  "story/postStory",
+  async (newStory: StoryI) => {
+    return await api.createStory(newStory);
   }
 );
 
 export const getStories = createAsyncThunk("story/getStories", async () => {
-  try {
-    const response = await api.getStories();
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await api.getAllStories();
+  return response;
 });
 
 export const getStoryById = createAsyncThunk(
   "story/getStoryById",
-  async (id: string | undefined) => {
+  async (id?: string): Promise<StoryI[]> => {
+    const response = await api.getStoryByStoryId(id);
+    return response;
+  }
+);
+
+export const editStory = createAsyncThunk(
+  "story/editStory",
+  async (id: string, body: any) => {
     try {
-      const response = await api.getStoryById(id);
+      const response = await api.editStory(id, body);
       return response;
     } catch (error) {
       console.log(error);
@@ -35,8 +34,78 @@ export const getStoryById = createAsyncThunk(
   }
 );
 
-const initialState = {
-  stories: [] as Story[],
+export const getAllStories = createAsyncThunk(
+  "story/getAllStories",
+  async () => {
+    try {
+      const response = await api.getAllStories();
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const deleteStory = createAsyncThunk(
+  "story/deleteStory",
+  async (id: string) => {
+    try {
+      const response = await api.deleteStory(id);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const getStoriesByUserId = createAsyncThunk(
+  "story/getStoriesByUserId",
+  async (userId: string) => {
+    try {
+      const response = await api.getStoriesByUserId(userId);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const likeByStoryId = createAsyncThunk(
+  "story/likeByStoryId",
+  async (storyId: string) => {
+    try {
+      const response = await api.likeByStoryId(storyId);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const getMyLikes = createAsyncThunk("story/getMyLikes", async () => {
+  try {
+    const response = await api.getMyLikes();
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// добавить все thunks в reducer storySlice
+
+interface StoriesState {
+  postedStory: StoryI[];
+  myStories: string;
+  allStories: StoryI[];
+  storyById: StoryI[];
+}
+
+const initialState: StoriesState = {
+  postedStory: [],
+  myStories: "",
+  allStories: [],
+  // as Story[],
+  storyById: [],
 };
 
 export const storySlice = createSlice({
@@ -51,17 +120,13 @@ export const storySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(postStory.fulfilled, (state, action) => {
-      state.stories.push({ ...action.payload });
+      state.postedStory = action.payload;
     });
     builder.addCase(getStories.fulfilled, (state, action) => {
-      state.stories = action.payload.reverse();
+      state.allStories = action.payload;
     });
     builder.addCase(getStoryById.fulfilled, (state, action) => {
-      const thisStory = action.payload;
-      const storyIndex = state.stories.findIndex(
-        (story) => story._id === thisStory._id
-      );
-      state.stories[storyIndex] = thisStory;
+      state.storyById = action.payload;
     });
   },
 });

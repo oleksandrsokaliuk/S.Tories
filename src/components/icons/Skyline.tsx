@@ -26,6 +26,18 @@ const Skyline: FC = () => {
         <clipPath id="ArtboardFrame">
           <rect height="595.35" width="841.995" x="0" y="0" />
         </clipPath>
+        <linearGradient
+          gradientTransform="matrix(1 0 0 1 0 0)"
+          gradientUnits="userSpaceOnUse"
+          id="LinearGradient"
+          x1="1347.66"
+          x2="2059.19"
+          y1="1067.07"
+          y2="1067.07"
+        >
+          <stop offset="0" stop-color="#2e07ff" />
+          <stop offset="0.802083" stop-color="#2db590" />
+        </linearGradient>
         <g clip-path="url(#ArtboardFrame)" id="Слой-1">
           <path
             d="M782.472 417.193L807.858 417.193L845.435 417.193L845.435 609.603L782.472 609.603L782.472 417.193Z"

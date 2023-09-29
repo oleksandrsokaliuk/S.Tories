@@ -20,6 +20,8 @@ import { IUser } from "../../redux/slices/userSlice";
 import LeftCloud from "../icons/LeftCloud";
 import RightCloud from "../icons/RightCloud";
 import Skyline from "../icons/Skyline";
+import DeliveryCreature from "../icons/DeliveryCreature";
+import SleepingBed from "../icons/SleepingBed";
 
 interface StoryI {
   id?: string;
@@ -260,9 +262,11 @@ const WelcomePage = () => {
         {user && <h2 style={{ zIndex: 1000 }}>Welcome {user.firstName}</h2>}
         <FlexDescription>This is a website about dreams</FlexDescription> */}
         <CloudsContainer>
-          <LeftCloud />
+          {/* <LeftCloud /> */}
+          <SleepingBed />
           <MainHeader currentTheme={currentTheme}>S.Tories</MainHeader>
-          <RightCloud />
+          {/* <RightCloud /> */}
+          <DeliveryCreature />
         </CloudsContainer>
         <Skyline />
       </HomeContainer>

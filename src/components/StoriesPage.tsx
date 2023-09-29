@@ -7,31 +7,33 @@ import { useEffect } from "react";
 import { AppDispatch, RootState } from "../redux/store";
 
 const StoriesPage = () => {
-  const allFanfics = useSelector(
-    (state: RootState) => state.storySlice.stories
+  const allStories = useSelector(
+    (state: RootState) => state.storySlice.allStories
   );
   // const fanficsList = allFanfics.reverse();
   // console.log(fanficsList);
   const navigation = useNavigate();
-  console.log(allFanfics);
+  console.log(allStories);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getStories());
+    if (!allStories.length) {
+      dispatch(getStories());
+    }
+    console.log({ allStoriesLength: allStories.length });
   }, []);
+  // useEffect(() => {
+  //   console.log(allStories);
+  // }, [allStories]);
 
   return (
     <>
-      <div className="fanfics-main-div">
-        {allFanfics &&
-          allFanfics.map((fanfic) => (
-            <div key={fanfic._id} className="fanfik-box">
-              <Link to={`${fanfic._id}`} className="fanfik-box__main-header">
-                {fanfic.articlesName}
-              </Link>
-              <h2 className="fanfik-box__second-header">
-                {fanfic.description}
-              </h2>
+      <div>
+        {allStories &&
+          allStories.map((story) => (
+            <div key={story.id}>
+              {/* <Link to={`${fanfic._id}`}>{fanfic.articlesName}</Link> */}
+              <h2>{story.title}</h2>
             </div>
           ))}
       </div>

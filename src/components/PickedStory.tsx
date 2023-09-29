@@ -8,7 +8,7 @@ import { Story } from "../types/Story";
 
 const PickedStory = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const storyId: string | undefined = useParams().id;
+  const storyId = useParams().id;
   // const pickedFanfic = useSelector((state) => state.fanficsSlice.fanfics).find(
   //   (fanfic) => fanfic._id == fanficId
   // );
@@ -16,17 +16,17 @@ const PickedStory = () => {
   const [story, setStory] = useState<Story>();
 
   const fetchOneStory = async () => {
-    const response = await api.getStoryById(storyId);
-    setStory(response);
+    const response = await api.getStoryByStoryId(storyId);
+    // setStory(response);
   };
-  useEffect(() => {
-    try {
-      dispatch(getStoryById(storyId));
-      fetchOneStory();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     dispatch(getStoryById(storyId));
+  //     fetchOneStory();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   return (
     <>

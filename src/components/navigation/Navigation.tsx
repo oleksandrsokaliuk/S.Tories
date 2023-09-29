@@ -56,7 +56,7 @@ const Navigation = () => {
       try {
         const userData = async () => {
           const response = await api.getMe(cookies.token);
-          dispatch(addUser(response.data));
+          dispatch(addUser(response));
         };
         userData();
       } catch (error) {

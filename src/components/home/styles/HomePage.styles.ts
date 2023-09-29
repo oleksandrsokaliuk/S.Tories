@@ -25,7 +25,7 @@ export const MainHeader = styled.h1<Mainheader>`
   text-transform: capitalize;
   transform: scale(4);
   padding-top: 2%;
-  z-index: 2;
+  z-index: 1;
   flex: 0 1 100px;
   text-align: center;
   align-self: flex-start;
@@ -109,28 +109,18 @@ export const FlexDescription = styled.p`
 `;
 
 export const LeftCloudHeader = styled.h2`
-  position: absolute;
+  /* position: absolute;
   top: 30%;
-  left: 35%;
-  z-index: 1000;
+  left: 35%; */
+  /* z-index: 1000; */
+  transform: translateY(200px);
+  text-align: center;
+  z-index: -1;
+  font-size: 1em;
   font-family: "Rock Salt", sans-serif;
   color: white;
-  display: none;
   opacity: 0;
-`;
-
-export const LeftCloudContainer = styled.div`
-  flex: 0 0 40vw;
-  cursor: pointer;
   transition: all 0.3s ease-in;
-  z-index: 3;
-  &:hover {
-    transform: scale(1.2);
-  }
-  &:hover ${LeftCloudHeader} {
-    display: block;
-    opacity: 1;
-  }
 `;
 
 export const LeftCloudSVG = styled.svg``;
@@ -138,14 +128,38 @@ export const LeftCloudSVG = styled.svg``;
 export const RightCloudSVG = styled.svg``;
 
 export const RightCloudHeader = styled.h2`
-  position: absolute;
-  top: 30%;
-  left: 42%;
-  z-index: 1000;
+  /* position: absolute;
+  top: 40%;
+  left: 40%; */
+  transform: translateY(200px);
+  z-index: -1;
+  font-size: 1em;
   font-family: "Rock Salt", sans-serif;
   color: white;
-  display: none;
   opacity: 0;
+  transition: all 0.3s ease-in;
+`;
+
+export const CreatureHoverItems = styled.path`
+  transition: all 0.3s ease-in-out;
+`;
+
+export const CreatureUnhoverItems = styled.path`
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+`;
+
+export const CreatureChair = styled.path`
+  transform: translateY(330px);
+  transition: transform 1s ease-in-out;
+`;
+
+export const CreatureEyeHover = styled.path`
+  opacity: 0;
+`;
+
+export const CreatureEyeUnhover = styled.path`
+  opacity: 1;
 `;
 
 export const RightCloudContainer = styled.div`
@@ -153,21 +167,76 @@ export const RightCloudContainer = styled.div`
   cursor: pointer;
   transition: all 0.3s ease-in;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   z-index: 2;
   &:hover {
     transform: scale(1.2);
   }
   &:hover ${RightCloudHeader} {
-    display: block;
+    opacity: 1;
+    transform: translateY(120px);
+  }
+  &:hover ${CreatureHoverItems} {
+    opacity: 0;
+  }
+  &:hover ${CreatureUnhoverItems} {
+    opacity: 1;
+  }
+  &:hover ${CreatureChair} {
+    transform: translateY(0);
+  }
+  &:hover ${CreatureEyeHover} {
+    opacity: 1;
+  }
+  &:hover ${CreatureEyeUnhover} {
+    opacity: 0;
+  }
+`;
+
+export const SleepingBedHover = styled.path`
+  opacity: 0;
+  transition: all 0.3s ease-in;
+`;
+
+export const SleepingBedHoverIdea = styled.path`
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+`;
+
+export const SleepingBedUnhover = styled.path`
+  opacity: 1;
+  transition: all 0.3s ease-in;
+`;
+
+export const LeftCloudContainer = styled.div`
+  flex: 0 0 40vw;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  z-index: 2;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:hover ${LeftCloudHeader} {
+    transform: translateY(170px);
+    opacity: 1;
+  }
+  &:hover ${SleepingBedHover} {
+    opacity: 1;
+  }
+  &:hover ${SleepingBedUnhover} {
+    opacity: 0;
+  }
+
+  &:hover ${SleepingBedHoverIdea} {
     opacity: 1;
   }
 `;
 
 export const CloudsContainer = styled.div`
-  flex: 0 0 200px;
+  flex: 0 0 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;

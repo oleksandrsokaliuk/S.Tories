@@ -18,7 +18,7 @@ const CreateStory = () => {
   const dispatch = useDispatch<AppDispatch>();
   const uploadFanfic = (story: Story) => {
     // dispatch(addFanfic(values));
-    dispatch(postStory(story));
+    // dispatch(postStory(story));
     console.log(story);
   };
   const initialValues: Story = {

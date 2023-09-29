@@ -30,7 +30,7 @@ export const routes = [
   },
   {
     path: locations.voyage,
-    component: ReadPage,
+    component: StoriesPage,
     name: "ReadPage",
     exact: true,
   },
