@@ -33,7 +33,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -44,7 +44,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -55,7 +55,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -66,7 +66,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -77,7 +77,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -88,7 +88,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -99,7 +99,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -110,7 +110,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -121,7 +121,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -132,7 +132,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -143,7 +143,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -154,7 +154,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -165,7 +165,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -176,7 +176,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -187,7 +187,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -198,7 +198,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -209,7 +209,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -220,7 +220,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -231,7 +231,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -242,7 +242,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -253,7 +253,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -264,7 +264,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -275,7 +275,7 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -286,14 +286,14 @@ const LeftCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
           <path
             d="M1558.19 428.012C1558.19 408.695 1574.93 393.035 1595.58 393.035C1616.23 393.035 1632.97 408.695 1632.97 428.012C1632.97 447.329 1616.23 462.988 1595.58 462.988C1574.93 462.988 1558.19 447.329 1558.19 428.012Z"
             fill="#e8ecf1"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />

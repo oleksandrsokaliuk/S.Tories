@@ -7,10 +7,12 @@ export enum ThemeType {
 
 interface CurrentTheme {
   currentTheme: ThemeType;
+  mainPage: boolean;
 }
 
 const initialState: CurrentTheme = {
   currentTheme: ThemeType.LIGHT,
+  mainPage: false,
 };
 
 export const themeSlice = createSlice({
@@ -23,9 +25,13 @@ export const themeSlice = createSlice({
           ? ThemeType.DARK
           : ThemeType.LIGHT;
     },
+    setMainPage: (state) => {
+      state.mainPage = !state.mainPage;
+      console.log({ state: state.mainPage });
+    },
   },
 });
 
-export const { changeTheme } = themeSlice.actions;
+export const { changeTheme, setMainPage } = themeSlice.actions;
 
 export default themeSlice.reducer;

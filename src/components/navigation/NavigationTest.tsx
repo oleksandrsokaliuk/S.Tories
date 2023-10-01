@@ -16,6 +16,7 @@ import {
   SearchBarIcon,
   SearchBarInput,
   SoundIcon,
+  TitleItem,
   ToggleModeIcon,
 } from "./styles/Navigation.styled";
 import { NavigationTitle } from "../../types/types";
@@ -45,6 +46,9 @@ const NavigationTest = () => {
     { name: "Dreams", path: "/stories" },
   ];
   const userData = useSelector((state: RootState) => state.userSlice.user);
+  const isMainPage = useSelector(
+    (state: RootState) => state.themeSlice.mainPage
+  );
   const [user, setUser] = useState<IUser>();
   const [cookies, setCookie] = useCookies(["token"]);
   const dispatch = useDispatch<AppDispatch>();
@@ -67,8 +71,11 @@ const NavigationTest = () => {
       }
     }
   }, []);
+  useEffect(() => {
+    console.log({ isMainPage });
+  }, [isMainPage]);
   return (
-    <nav>
+    <nav style={{ height: "10vh" }}>
       <NavigationList>
         <li
           style={{ flex: "0 1 150px", zIndex: "1000" }}
@@ -91,9 +98,9 @@ const NavigationTest = () => {
           /> */}
           <Sun />
         </li>
-        {/* <li style={{ flex: "0 1 10px" }}>
-          <NavigationHeader>S.Tories</NavigationHeader>
-        </li> */}
+        {!isMainPage && (
+          <TitleItem onClick={() => navigation("/")}>S.Tories</TitleItem>
+        )}
         <li style={{ flex: "0 1 10px", margin: "1% 1%", zIndex: 5 }}>
           {user?.picture ? (
             <ProfileIcon

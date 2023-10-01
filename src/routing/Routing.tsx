@@ -3,7 +3,7 @@ import HomePage from "../components/home/HomePage";
 import ReadPage from "../components/read/ReadPage";
 import StoriesPage from "../components/StoriesPage";
 import LoginPage from "../components/authorization/login/LoginPage";
-import CreateStory from "../components/CreateStory";
+import CreateStory from "../components/create/CreateStory";
 import PickedStory from "../components/PickedStory";
 import RegistrationPage from "../components/authorization/registration/RegistrationPage";
 import TokenAcceptor from "../components/authorization/login/TokenAcceptor";
@@ -36,8 +36,8 @@ export const routes = [
   },
   {
     path: locations.shareStory,
-    component: StoriesPage,
-    name: "Stories",
+    component: CreateStory,
+    name: "CreateStory",
     exact: true,
   },
   {

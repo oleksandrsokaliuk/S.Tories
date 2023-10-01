@@ -33,7 +33,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -44,7 +44,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -55,7 +55,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -66,7 +66,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.bottomColor
                 : theme.dark.mainPage.clouds.bottomColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -77,7 +77,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -88,7 +88,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -99,7 +99,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -110,7 +110,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -121,7 +121,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -132,7 +132,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -143,7 +143,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -154,7 +154,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -165,7 +165,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -176,7 +176,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -187,7 +187,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -198,7 +198,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -209,7 +209,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -220,7 +220,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -231,7 +231,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -242,7 +242,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -253,7 +253,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -264,7 +264,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.middleColor
                 : theme.dark.mainPage.clouds.middleColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -275,7 +275,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -286,7 +286,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -297,7 +297,7 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
@@ -308,14 +308,14 @@ const RightCloud: FC = () => {
                 ? theme.light.mainPage.clouds.topColor
                 : theme.dark.mainPage.clouds.topColor
             }
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />
           <path
             d="M1835.4 517.813C1835.4 495.994 1853.09 478.305 1874.9 478.305C1896.72 478.305 1914.41 495.994 1914.41 517.813C1914.41 539.633 1896.72 557.321 1874.9 557.321C1853.09 557.321 1835.4 539.633 1835.4 517.813Z"
             fill="#ffffff"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="1"
             stroke="none"
           />

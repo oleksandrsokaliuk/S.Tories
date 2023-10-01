@@ -4,12 +4,12 @@ import { Story } from "../types/Story";
 export interface StoryI {
   id: string;
   created_at: string;
-  updated_at: string;
+  updated_at?: string;
   title: string;
   content: string;
   published: boolean;
   viewCount: number;
-  authorId: string;
+  authorId?: string;
   author: {
     firstName?: string | null;
     id: string;

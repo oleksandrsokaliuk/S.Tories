@@ -15,13 +15,15 @@ import {
 import Cloud from "./../../assets/cloud.png";
 import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { AppDispatch, RootState } from "../../redux/store";
 import { IUser } from "../../redux/slices/userSlice";
 import LeftCloud from "../icons/LeftCloud";
 import RightCloud from "../icons/RightCloud";
 import Skyline from "../icons/Skyline";
 import DeliveryCreature from "../icons/DeliveryCreature";
 import SleepingBed from "../icons/SleepingBed";
+import { setMainPage } from "../../redux/slices/themeSlice";
+import { useDispatch } from "react-redux";
 
 interface StoryI {
   id?: string;
@@ -34,6 +36,7 @@ interface StoryI {
 }
 
 const WelcomePage = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const [cookies, setCookie] = useCookies(["token"]);
   const mockStories: StoryI[] = [
     {
@@ -250,6 +253,10 @@ const WelcomePage = () => {
       storiesArray.push(chunk);
     }
     setStories(storiesArray);
+    dispatch(setMainPage());
+    return () => {
+      dispatch(setMainPage());
+    };
   }, []);
   useEffect(() => {
     setUser(userData);

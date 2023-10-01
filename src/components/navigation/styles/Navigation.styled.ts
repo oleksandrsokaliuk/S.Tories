@@ -139,3 +139,12 @@ export const SoundIcon = styled.img`
     transform: scale(1.2);
   }
 `;
+
+export const TitleItem = styled.li`
+  flex: 1;
+  text-align: center;
+  font-size: 2em;
+  margin: 1%;
+  cursor: pointer;
+  color: white;
+`;
