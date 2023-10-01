@@ -31,8 +31,8 @@ const PickedStory = () => {
   return (
     <>
       <div>
-        <h1>{story && story.articlesName}</h1>
-        <h2>{story && story.description}</h2>
+        {/* <h1>{story && story.articlesName}</h1>
+        <h2>{story && story.description}</h2> */}
       </div>
     </>
   );

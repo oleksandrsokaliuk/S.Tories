@@ -27,7 +27,6 @@ export const themeSlice = createSlice({
     },
     setMainPage: (state) => {
       state.mainPage = !state.mainPage;
-      console.log({ state: state.mainPage });
     },
   },
 });

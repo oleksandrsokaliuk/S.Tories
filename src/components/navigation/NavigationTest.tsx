@@ -55,7 +55,6 @@ const NavigationTest = () => {
 
   useEffect(() => {
     setUser(userData);
-    console.log({ picture: user?.picture });
   }, [userData]);
 
   useEffect(() => {
@@ -71,9 +70,6 @@ const NavigationTest = () => {
       }
     }
   }, []);
-  useEffect(() => {
-    console.log({ isMainPage });
-  }, [isMainPage]);
   return (
     <nav style={{ height: "10vh" }}>
       <NavigationList>
@@ -102,18 +98,26 @@ const NavigationTest = () => {
           <TitleItem onClick={() => navigation("/")}>S.Tories</TitleItem>
         )}
         <li style={{ flex: "0 1 10px", margin: "1% 1%", zIndex: 5 }}>
-          {user?.picture ? (
-            <ProfileIcon
-              src={
-                user.picture
-                  ? user.picture
-                  : "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg"
-              }
-              alt="profile"
-              onClick={() => {
-                navigation("/user");
-              }}
-            />
+          {cookies.token ? (
+            user?.picture ? (
+              <ProfileIcon
+                src={user.picture}
+                alt="profile"
+                onClick={() => {
+                  navigation("/user");
+                }}
+              />
+            ) : (
+              <ProfileIcon
+                src={
+                  "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg"
+                }
+                alt="profile"
+                onClick={() => {
+                  navigation("/user");
+                }}
+              />
+            )
           ) : (
             <LoginIcon
               src={loginIcon}

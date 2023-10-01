@@ -1,8 +1,5 @@
 export interface Story {
-  _id?: string;
-  author: string;
-  articlesName: string;
-  description: string;
+  title: string;
   content: string;
-  picture?: string;
+  published: boolean;
 }

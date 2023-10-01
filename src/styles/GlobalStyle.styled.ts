@@ -1,14 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import { store } from "../redux/store";
-// import { ThemeType } from "../redux/slices/themeSlice";
-
-// let currentTheme = "";
-
-// const subscribe = store.subscribe(() => {
-//   let currentTheme = store.getState().themeSlice.currentTheme;
-//   console.log("Состояние изменилось и равно:", currentTheme);
-// });
-// subscribe();
 
 const GlobalStyle = createGlobalStyle`
 *,

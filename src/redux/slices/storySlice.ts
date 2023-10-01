@@ -2,10 +2,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api, { StoryI } from "../../api/api";
 import { Story } from "../../types/Story";
 
+interface postStoryI {
+  story: Story;
+  accessToken: any;
+}
+
 export const postStory = createAsyncThunk(
   "story/postStory",
-  async (newStory: StoryI) => {
-    return await api.createStory(newStory);
+  async (action: postStoryI) => {
+    return await api.createStory(action.story, action.accessToken);
   }
 );
 

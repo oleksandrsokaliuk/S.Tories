@@ -57,10 +57,18 @@ export const server = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-const createStory = async (story: StoryI): Promise<StoryI[]> => {
+const createStory = async (
+  story: Story,
+  accessToken: any
+): Promise<StoryI[]> => {
   const response: EndpointReturnI = await server.post(
     storiesEndpoints.postStory,
-    story
+    story,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
   );
   return response.responseObject; // ?
 };
@@ -92,8 +100,7 @@ const getAllStories = async () => {
   const response = await server.get<EndpointReturnI>(
     storiesEndpoints.getAllStories
   );
-  console.log(storiesEndpoints.getAllStories);
-  console.log({ allStoriesResponse: response });
+
   return response.data.responseObject;
 };
 

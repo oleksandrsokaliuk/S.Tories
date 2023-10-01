@@ -25,7 +25,6 @@ const StoriesPage = () => {
   // const fanficsList = allFanfics.reverse();
   // console.log(fanficsList);
   const navigation = useNavigate();
-  console.log(allStories);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -34,10 +33,7 @@ const StoriesPage = () => {
     } else {
       setTopStories(allStories.slice(0, 4));
       setMiddleStories(allStories.slice(4, 6));
-      setBottomStories(allStories.slice(6, 11));
-      console.log({ topStories });
-      console.log({ middleStories });
-      console.log({ bottomStories });
+      setBottomStories(allStories.slice(6, 10));
     }
   }, [allStories]);
 

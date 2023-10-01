@@ -10,8 +10,6 @@ const Skyline: FC = () => {
   const currentTheme = useSelector(
     (state: RootState) => state.themeSlice.currentTheme
   );
-
-  console.log({ theme });
   return (
     <SkylineContainer>
       <SkylineSVG

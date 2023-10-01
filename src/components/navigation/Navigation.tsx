@@ -48,7 +48,6 @@ const Navigation = () => {
 
   useEffect(() => {
     setUser(userData);
-    console.log({ picture: user?.picture });
   }, [userData]);
 
   useEffect(() => {

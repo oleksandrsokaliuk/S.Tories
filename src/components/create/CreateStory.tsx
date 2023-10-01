@@ -10,58 +10,89 @@ import {
   BookSide,
   MainContainer,
 } from "./styles/CreateStory.styled";
+import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
+import LoginPage from "../authorization/login/LoginPage";
+import api from "../../api/api";
 
 const CreateStorySchema = Yup.object().shape({
-  articlesName: Yup.string().max(50, "Too Long!").required("Required"),
-  description: Yup.string()
+  title: Yup.string().max(50, "Too Long!").required("Required"),
+  content: Yup.string()
     .min(2, "Too Short!")
     .max(250, "Too Long!")
     .required("Required"),
 });
 
 const CreateStory = () => {
+  const [cookies, setCookie] = useCookies(["token"]);
+  const [iseUserSignedIn, setUserSignedIn] = useState<boolean>(false);
+  const [isResponseSuccessfull, setResponseSuccessfull] =
+    useState<boolean>(false);
+  useEffect(() => {
+    setResponseSuccessfull(false);
+    console.log({ cookiesInCreateStory: cookies });
+    !Object.keys(cookies).length
+      ? setUserSignedIn(false)
+      : setUserSignedIn(true);
+  }, []);
   const dispatch = useDispatch<AppDispatch>();
-  const uploadFanfic = (story: Story) => {
+  const addStoryToDB = async (story: Story) => {
     // dispatch(addFanfic(values));
     // dispatch(postStory(story));
     console.log(story);
+    const response = await dispatch(
+      postStory({ story, accessToken: cookies.token })
+    );
+    response.meta.requestStatus === "fulfilled"
+      ? setResponseSuccessfull(true)
+      : setResponseSuccessfull(false);
+    console.log({ response });
   };
   const initialValues: Story = {
-    author: "",
-    articlesName: "",
-    description: "",
+    title: "",
     content: "",
-    picture: "",
+    published: false,
   };
-  return (
+  return iseUserSignedIn ? (
     <MainContainer>
       <Formik
         initialValues={initialValues}
         validationSchema={CreateStorySchema}
-        onSubmit={uploadFanfic}
+        onSubmit={addStoryToDB}
       >
         {({ errors, touched }) => (
           <BookContainer>
             <BookSide>
-              <h2>Title: Author from redux</h2>
+              <label htmlFor="title">Title:</label>
+              <Field name="title" id="title" type="text" />
             </BookSide>
             <BookSide>
-              <label htmlFor="fanficName">Fanfic name</label>
-              <Field name="articlesName" id="fanficName" type="text" />
-              {errors.articlesName && touched.articlesName ? (
-                <div>{errors.articlesName}</div>
-              ) : null}
-              <label htmlFor="fanficDescription">Description</label>
-              <Field name="description" id="fanficDescription" type="text" />
-              {errors.description && touched.description ? (
-                <div>{errors.description}</div>
-              ) : null}
-              <button type="submit"> Save </button>
+              <label htmlFor="content">Story:</label>
+              <Field name="content" id="content" type="text" />
+              {errors.title && touched.content && <div>{errors.content}</div>}
+              <div>
+                <button type="submit"> Save </button>
+                <div>
+                  <label htmlFor="published">Publish:</label>
+                  <Field name="published" id="published" type="checkbox" />
+                  {errors.title && touched.content && (
+                    <div>{errors.published}</div>
+                  )}
+                </div>
+                {isResponseSuccessfull && (
+                  <p>The story is saved successfully</p>
+                )}
+              </div>
             </BookSide>
           </BookContainer>
         )}
       </Formik>
     </MainContainer>
+  ) : (
+    <>
+      <h1> You have to Sign In first </h1>
+      <LoginPage />
+    </>
   );
 };
 

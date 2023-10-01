@@ -53,7 +53,6 @@ const LoginPage = () => {
   const googleLoginHandler = async () => {
     try {
       const accountData = await server.get("/auth/google");
-      console.log(accountData);
     } catch (error) {
       console.error(error);
     }

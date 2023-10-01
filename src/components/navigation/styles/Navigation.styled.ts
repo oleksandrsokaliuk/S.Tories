@@ -124,6 +124,7 @@ export const ProfileIcon = styled.img`
   /* height: 65%; */
   cursor: pointer;
   transition: all 0.3s linear;
+  max-width: 100px;
   /* flex: 0 1 10px; */
   border-radius: 50%;
   &:hover {
